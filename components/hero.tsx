@@ -58,14 +58,15 @@ export function Hero() {
         <div className="relative mx-auto md:mx-0">
           <div className="absolute -inset-3 -z-10 rounded-3xl bg-primary/10 blur-2xl" />
           <div className="overflow-hidden rounded-2xl border border-border bg-card">
-            <Image
-              src="/saad.png"
-              alt="Portrait of Saad Qamar Alvi"
-              width={320}
-              height={400}
-              priority
-              className="h-[360px] w-[288px] object-cover md:h-[420px] md:w-[336px]"
-            />
+          <Image
+  src="/saad.png"
+  alt="Portrait of Saad Qamar Alvi"
+  width={320}
+  height={400}
+  priority
+  unoptimized
+  className="h-[360px] w-[288px] object-cover md:h-[420px] md:w-[336px]"
+/>
           </div>
         </div>
       </div>
