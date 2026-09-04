@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-export default function ContactForm() {
+export function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [statusMessage, setStatusMessage] = useState('');
@@ -33,46 +33,67 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 max-w-md">
-      <input
-        type="text"
-        placeholder="Your Name"
-        required
-        value={formData.name}
-        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-        disabled={isSubmitting}
-        className="w-full p-2 border rounded disabled:opacity-50 text-black"
-      />
-      
-      <input
-        type="email"
-        placeholder="Your Email"
-        required
-        value={formData.email}
-        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-        disabled={isSubmitting}
-        className="w-full p-2 border rounded disabled:opacity-50 text-black"
-      />
+    <section id="contact" className="py-20 border-t border-border/40">
+      <div className="mx-auto max-w-5xl px-6">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Get In Touch</h2>
+          <p className="mt-4 text-muted-foreground">
+            Have a project in mind or want to collaborate? Feel free to reach out.
+          </p>
+        </div>
 
-      <textarea
-        placeholder="Your Message"
-        required
-        rows={4}
-        value={formData.message}
-        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-        disabled={isSubmitting}
-        className="w-full p-2 border rounded disabled:opacity-50 text-black"
-      />
+        <form onSubmit={handleSubmit} className="mx-auto mt-12 max-w-xl space-y-4">
+          <div>
+            <input
+              type="text"
+              placeholder="Your Name"
+              required
+              value={formData.name}
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              disabled={isSubmitting}
+              className="w-full rounded-md border border-border bg-background px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring disabled:opacity-50"
+            />
+          </div>
 
-      <button
-        type="submit"
-        disabled={isSubmitting}
-        className="px-4 py-2 bg-blue-600 text-white rounded disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
-      >
-        {isSubmitting ? 'Sending...' : 'Send Message'}
-      </button>
+          <div>
+            <input
+              type="email"
+              placeholder="Your Email"
+              required
+              value={formData.email}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              disabled={isSubmitting}
+              className="w-full rounded-md border border-border bg-background px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring disabled:opacity-50"
+            />
+          </div>
 
-      {statusMessage && <p className="text-sm mt-2">{statusMessage}</p>}
-    </form>
+          <div>
+            <textarea
+              placeholder="Your Message"
+              required
+              rows={5}
+              value={formData.message}
+              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+              disabled={isSubmitting}
+              className="w-full rounded-md border border-border bg-background px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring disabled:opacity-50 resize-none"
+            />
+          </div>
+
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full rounded-md bg-primary px-6 py-3 font-medium text-primary-foreground hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {isSubmitting ? 'Sending...' : 'Send Message'}
+          </button>
+
+          {statusMessage && (
+            <p className="text-center text-sm font-medium mt-2 text-muted-foreground">
+              {statusMessage}
+            </p>
+          )}
+        </form>
+      </div>
+    </section>
   );
 }
