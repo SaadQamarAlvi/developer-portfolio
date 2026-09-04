@@ -2,7 +2,7 @@ import { SiteHeader } from '@/components/site-header'
 import { Hero } from '@/components/hero'
 import { Skills } from '@/components/skills'
 import { Projects } from '@/components/projects'
-import { Contact } from '@/components/contact'
+import Contact from '@/components/contact'
 
 export default function Page() {
   return (
@@ -16,7 +16,7 @@ export default function Page() {
       </main>
       <footer className="border-t border-border/60">
         <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-2 px-6 py-8 text-sm text-muted-foreground sm:flex-row">
-          <p>&copy; {new Date().getFullYear()} Alex Rivera. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Saad Qamar Alvi. All rights reserved.</p>
           <p className="font-mono">Built with Next.js &amp; Tailwind CSS</p>
         </div>
       </footer>

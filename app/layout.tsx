@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
+import './globals.css'; // Make sure your global styles are imported here
 
 export const metadata: Metadata = {
-  // Update this domain later once your custom domain is live
   metadataBase: new URL('https://saadqamaralvi.vercel.app'),
   
   title: {
@@ -26,7 +26,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body>{children}</body>

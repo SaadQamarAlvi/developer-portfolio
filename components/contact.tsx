@@ -21,7 +21,6 @@ export default function ContactForm() {
 
       if (response.ok) {
         setStatusMessage('Message sent successfully!');
-        // Clear the form inputs
         setFormData({ name: '', email: '', message: '' });
       } else {
         setStatusMessage('Failed to send message. Please try again.');
@@ -42,7 +41,7 @@ export default function ContactForm() {
         value={formData.name}
         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
         disabled={isSubmitting}
-        className="w-full p-2 border rounded disabled:opacity-50"
+        className="w-full p-2 border rounded disabled:opacity-50 text-black"
       />
       
       <input
@@ -52,7 +51,7 @@ export default function ContactForm() {
         value={formData.email}
         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
         disabled={isSubmitting}
-        className="w-full p-2 border rounded disabled:opacity-50"
+        className="w-full p-2 border rounded disabled:opacity-50 text-black"
       />
 
       <textarea
@@ -62,7 +61,7 @@ export default function ContactForm() {
         value={formData.message}
         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
         disabled={isSubmitting}
-        className="w-full p-2 border rounded disabled:opacity-50"
+        className="w-full p-2 border rounded disabled:opacity-50 text-black"
       />
 
       <button
