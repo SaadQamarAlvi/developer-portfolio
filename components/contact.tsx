@@ -33,11 +33,11 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 border-t border-border/40">
+    <section id="contact" className="w-full py-20 border-t border-white/10">
       <div className="mx-auto max-w-5xl px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Get In Touch</h2>
-          <p className="mt-4 text-muted-foreground">
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Get In Touch</h2>
+          <p className="mt-4 text-zinc-400">
             Have a project in mind or want to collaborate? Feel free to reach out.
           </p>
         </div>
@@ -51,7 +51,7 @@ export function Contact() {
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               disabled={isSubmitting}
-              className="w-full rounded-md border border-border bg-background px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring disabled:opacity-50"
+              className="w-full rounded-lg border border-zinc-800 bg-zinc-900/80 px-4 py-3 text-white placeholder:text-zinc-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:opacity-50"
             />
           </div>
 
@@ -63,7 +63,7 @@ export function Contact() {
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               disabled={isSubmitting}
-              className="w-full rounded-md border border-border bg-background px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring disabled:opacity-50"
+              className="w-full rounded-lg border border-zinc-800 bg-zinc-900/80 px-4 py-3 text-white placeholder:text-zinc-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:opacity-50"
             />
           </div>
 
@@ -75,20 +75,20 @@ export function Contact() {
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               disabled={isSubmitting}
-              className="w-full rounded-md border border-border bg-background px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring disabled:opacity-50 resize-none"
+              className="w-full rounded-lg border border-zinc-800 bg-zinc-900/80 px-4 py-3 text-white placeholder:text-zinc-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 disabled:opacity-50 resize-none"
             />
           </div>
 
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full rounded-md bg-primary px-6 py-3 font-medium text-primary-foreground hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full rounded-lg bg-blue-600 px-6 py-3 font-medium text-white hover:bg-blue-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? 'Sending...' : 'Send Message'}
           </button>
 
           {statusMessage && (
-            <p className="text-center text-sm font-medium mt-2 text-muted-foreground">
+            <p className="text-center text-sm font-medium mt-2 text-zinc-400">
               {statusMessage}
             </p>
           )}
