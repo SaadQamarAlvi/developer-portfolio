@@ -1,40 +1,35 @@
-import { Analytics } from '@vercel/analytics/next'
-import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
-import './globals.css'
-
-const geistSans = Geist({ subsets: ['latin'], variable: '--font-geist-sans' })
-const geistMono = Geist_Mono({
-  subsets: ['latin'],
-  variable: '--font-geist-mono',
-})
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Saad Qamar Alvi — Full-Stack Web Developer',
-  description:
-    'Portfolio of Saad Qamar Alvi, a full-stack web developer building fast, accessible web apps with React, Next.js, Node.js, and Supabase.',
-  generator: 'v0.app',
-}
+  // Update this domain later once your custom domain is live
+  metadataBase: new URL('https://saadqamaralvi.vercel.app'),
+  
+  title: {
+    default: 'Saad Qamar Alvi | IT Student & Software Developer',
+    template: '%s | Saad Qamar Alvi',
+  },
+  description: 'Personal portfolio of Saad Qamar Alvi — IT undergraduate showcasing projects in Next.js, C++, databases, and web automation.',
+  
+  openGraph: {
+    title: 'Saad Qamar Alvi | IT Student & Software Developer',
+    description: 'Explore my software projects, technical skills, and development portfolio.',
+    url: 'https://saadqamaralvi.vercel.app',
+    siteName: 'Saad Qamar Alvi Portfolio',
+    locale: 'en_US',
+    type: 'website',
+  },
+  
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Saad Qamar Alvi | IT Student & Software Developer',
+    description: 'Explore my software projects, technical skills, and development portfolio.',
+  },
+};
 
-export const viewport: Viewport = {
-  colorScheme: 'dark',
-  themeColor: '#0b0f0e',
-}
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      className={`dark bg-background ${geistSans.variable} ${geistMono.variable}`}
-    >
-      <body className="font-sans antialiased">
-        {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
-      </body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
-  )
+  );
 }
