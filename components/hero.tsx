@@ -1,8 +1,6 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Code2, Mail } from 'lucide-react'
-import saadImg from '../../public/saad.png'
 
 export function Hero() {
   return (
@@ -58,13 +56,8 @@ export function Hero() {
 
         <div className="relative mx-auto md:mx-0">
           <div className="absolute -inset-3 -z-10 rounded-3xl bg-primary/10 blur-2xl" />
-          <div className="overflow-hidden rounded-2xl border border-border bg-card">
-            <Image
-              src={saadImg}
-              alt="Portrait of Saad Qamar Alvi"
-              priority
-              className="h-[360px] w-[288px] object-cover md:h-[420px] md:w-[336px]"
-            />
+          <div className="flex h-[360px] w-[288px] items-center justify-center rounded-2xl border border-border bg-card md:h-[420px] md:w-[336px]">
+            <span className="text-4xl font-bold tracking-wider text-muted-foreground">SQA</span>
           </div>
         </div>
       </div>
