@@ -1,5 +1,5 @@
 import { SiteHeader } from '@/components/site-header'
-import Hero from '@/components/hero' 
+import Hero from '@/components/hero'
 import { About } from '@/components/about'
 import { Services } from '@/components/services'
 import { Skills } from '@/components/skills'
