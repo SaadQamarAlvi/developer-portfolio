@@ -52,7 +52,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right Column: Clickable LinkedIn Profile Image */}
+        {/* Right Column: Larger Clickable LinkedIn Profile Image */}
         <div className="shrink-0">
           <a
             href="https://www.linkedin.com/in/saad-qamar-alvi07353a243"
@@ -60,7 +60,8 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="block group relative"
           >
-            <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-2 border-emerald-500/30 group-hover:border-emerald-500 transition-all duration-300 shadow-lg">
+            {/* Increased dimensions to w-48 h-48 on mobile and sm:w-64 sm:h-64 on desktop */}
+            <div className="relative w-48 h-48 sm:w-64 sm:h-64 rounded-full overflow-hidden border-2 border-emerald-500/30 group-hover:border-emerald-500 transition-all duration-300 shadow-xl">
               <Image
                 src="/profile.jpeg"
                 alt="Saad Qamar Alvi"
