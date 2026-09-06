@@ -1,73 +1,50 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import { ArrowRight, Code2, Mail } from 'lucide-react'
+import { Download } from 'lucide-react'
 
-export function Hero() {
+export default function Hero() {
   return (
-    <section className="mx-auto max-w-5xl px-6 pb-20 pt-16 md:pt-24">
-      <div className="grid items-center gap-12 md:grid-cols-[1fr_auto]">
-        <div className="flex flex-col items-start gap-6">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
-            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            Available for new projects
-          </span>
+    <section className="py-20 max-w-5xl mx-auto px-6">
+      <div className="max-w-2xl">
+        <span className="inline-block px-3 py-1 text-xs font-medium bg-emerald-500/10 text-emerald-400 rounded-full mb-4 border border-emerald-500/20">
+          Available for new projects
+        </span>
+        
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground mb-4">
+          Full-Stack Developer building <span className="text-emerald-500">fast, thoughtful</span> web apps.
+        </h1>
+        
+        <p className="text-muted-foreground text-lg mb-6">
+          I'm Saad Qamar Alvi. I design and ship end-to-end products — from pixel-perfect front-ends to reliable APIs and databases.
+        </p>
 
-          <h1 className="text-balance text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
-            Full-Stack Developer building{' '}
-            <span className="text-primary">fast, thoughtful</span> web apps.
-          </h1>
+        {/* Action Button Group */}
+        <div className="flex flex-wrap items-center gap-3 mt-6">
+          <a
+            href="#projects"
+            className="px-4 py-2.5 rounded-lg bg-emerald-500 text-zinc-950 font-medium hover:bg-emerald-400 transition-colors"
+          >
+            View my work &rarr;
+          </a>
 
-          <p className="max-w-xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
-            I&apos;m Saad Qamar Alvi. I design and ship end-to-end products &mdash;
-            from pixel-perfect front-ends to reliable APIs and databases. I care
-            about performance, accessibility, and clean, maintainable code.
-          </p>
+          <a
+            href="https://www.linkedin.com/in/saadqamaralvi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2.5 rounded-lg border border-border bg-card text-foreground hover:bg-accent transition-colors flex items-center gap-2 text-sm font-medium"
+          >
+            <svg className="w-4 h-4 text-emerald-500 fill-current" viewBox="0 0 24 24">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.78a1.53 1.53 0 1 0 0 3.06 1.53 1.53 0 0 0 0-3.06Z" />
+            </svg>
+            LinkedIn
+          </a>
 
-          <div className="flex flex-wrap items-center gap-3 pt-2">
-            <Button size="lg" render={<Link href="#projects" />}>
-              View my work
-              <ArrowRight className="size-4" />
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              render={<Link href="#contact" />}
-            >
-              Get in touch
-            </Button>
-            <div className="flex items-center gap-1 pl-1">
-              <Link
-                href="https://github.com/saadqamaralvi"
-                aria-label="GitHub profile"
-                className="inline-flex size-10 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-card hover:text-foreground"
-              >
-                <Code2 className="size-5" />
-              </Link>
-              <Link
-                href="mailto:saadqamaralvi@gmail.com"
-                aria-label="Email me"
-                className="inline-flex size-10 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-card hover:text-foreground"
-              >
-                <Mail className="size-5" />
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        <div className="relative mx-auto md:mx-0">
-          <div className="absolute -inset-3 -z-10 rounded-3xl bg-primary/10 blur-2xl" />
-          <div className="overflow-hidden rounded-2xl border border-border bg-card">
-            <Image
-              src="/profile.jpeg"
-              alt="Portrait of Saad Qamar Alvi"
-              width={320}
-              height={400}
-              priority
-              unoptimized
-              className="h-[360px] w-[288px] object-cover md:h-[420px] md:w-[336px]"
-            />
-          </div>
+          <a
+            href="/Saad_Qamar_Alvi_Resume.pdf"
+            download="Saad_Qamar_Alvi_Resume.pdf"
+            className="px-4 py-2.5 rounded-lg border border-border bg-card text-foreground hover:bg-accent transition-colors flex items-center gap-2 text-sm font-medium"
+          >
+            <Download className="w-4 h-4 text-emerald-500" />
+            Resume
+          </a>
         </div>
       </div>
     </section>
