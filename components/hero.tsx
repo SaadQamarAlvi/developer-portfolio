@@ -30,7 +30,7 @@ export default function Hero() {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/saadqamaralvi"
+              href="https://www.linkedin.com/in/saad-qamar-alvi07353a243"
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2.5 rounded-lg border border-border bg-card text-foreground hover:bg-accent transition-colors flex items-center gap-2 text-sm font-medium"
@@ -55,7 +55,7 @@ export default function Hero() {
         {/* Right Column: Clickable LinkedIn Profile Image */}
         <div className="shrink-0">
           <a
-            href="https://www.linkedin.com/in/saadqamaralvi"
+            href="https://www.linkedin.com/in/saad-qamar-alvi07353a243"
             target="_blank"
             rel="noopener noreferrer"
             className="block group relative"
