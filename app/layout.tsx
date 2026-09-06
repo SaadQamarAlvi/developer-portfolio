@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
+import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://saadqamaralvi.vercel.app'), // Replace with your custom domain once live
+  metadataBase: new URL('https://saadqamaralvi.vercel.app'),
   title: 'Saad Qamar Alvi | Full-Stack Developer & IT Undergraduate',
   description: 'Portfolio of Saad Qamar Alvi showcasing Next.js, React, serverless APIs, and modern web application development.',
   openGraph: {
@@ -12,4 +13,19 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
-}; 
+};
+
+// MUST BE EXPORT DEFAULT
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body className="bg-zinc-950 text-white antialiased">
+        {children}
+      </body>
+    </html>
+  );
+}
